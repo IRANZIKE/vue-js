@@ -9,7 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-   
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header>
@@ -17,18 +18,12 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(5)">Add 5</button>
-      <button v-on:click.left="remove(5)">Remove 5</button>
-      <p v-once>Starting Counter: {{counter}}</p>
+      <button v-on:click="add(10)">Add 10</button>
+      <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, Schwanst)" v-on:keyup.enter="confirmedInput"/>
-      <p>Your Name: {{ confirmedName }}</p>
-      <form v-on:submit="submitForm">
-       <input type="text">
-       <button>Sign Up</button>
-      </form>
+      <input type="text" v-on:input="setName($event, 'Schwarzmüller')">
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name: {{ name }}</p>
     </section>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js"></script>
   </body>
 </html>
