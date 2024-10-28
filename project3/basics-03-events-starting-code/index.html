@@ -18,10 +18,10 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="add(5)">Add 5</button>
-      <button v-on:click="remove(5)">Remove 5</button>
+      <button v-on:click.left="remove(5)">Remove 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, Schwanst)"/>
-      <p>Your Name: {{ name }}</p>
+      <input type="text" v-on:input="setName($event, Schwanst)" v-on:keyup.enter="confirmedInput"/>
+      <p>Your Name: {{ confirmedName }}</p>
       <form v-on:submit="submitForm">
        <input type="text">
        <button>Sign Up</button>
